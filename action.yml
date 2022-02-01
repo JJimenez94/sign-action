@@ -1,4 +1,4 @@
-name: 'Code sign a file'
+name: 'Code sign a file requiring password/sha1'
 description: 'Sign a file with a code signing certificate.'
 branding:
   icon: 'award'
@@ -6,6 +6,12 @@ branding:
 inputs:
   certificate:
     description: 'The base64 encoded certificate.'
+    required: true
+  certificate-password:
+    description: 'The password for opening the certificate'
+    required: true
+  certificate-sha1:
+    description: 'The SHA-1 hash of the certificate'
     required: true
   folder:
     description: 'The folder that contains the files to sign.'
