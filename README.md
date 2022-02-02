@@ -1,6 +1,6 @@
 # Code sign a file
 
-This action signs `.nupkg` files and files that are supported by `signtool.exe` with a code signing certificate. This action only works on Windows and that means it should run on `windows-latest`.
+This action signs files that are supported by `signtool.exe` with a code signing certificate. This action only works on Windows _but_ dynamically finds `signtool` and should therefore run with self-hosted runners that have it. Also, this action allows to provide the password for the base64-encoded `pfx` file and its SHA1 hash (also called thumbprint in Windows). Other tools either have a fixed path in the code or do not allow to enter password or hash.
 
 ## Inputs
 
