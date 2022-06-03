@@ -1,6 +1,6 @@
 {
   "name": "code-sign-action",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Sign files with a code signing certificate.",
   "main": "index.js",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MichaelVoelkel/code-sign-action.git"
+    "url": "git+https://github.com/JJimenez94/sign-action.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MichaelVoelkel/code-sign-action/issues"
+    "url": "https://github.com/JJimenez94/sign-action/issues"
   },
-  "homepage": "https://github.com/MichaelVoelkel/code-sign-action#readme",
+  "homepage": "https://github.com/JJimenez94/sign-action#readme",
   "dependencies": {
     "@actions/core": "^1.6.0"
   },

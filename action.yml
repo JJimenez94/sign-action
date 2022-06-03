@@ -1,4 +1,4 @@
-name: 'Code sign a file requiring password/sha1'
+name: 'Code signing action'
 description: 'Sign a file with a code signing certificate.'
 branding:
   icon: 'award'
@@ -16,6 +16,9 @@ inputs:
   folder:
     description: 'The folder that contains the files to sign.'
     required: true
+  extensions:
+    description: 'List of extentions for the files to sign.'
+    required: false
   recursive:
     description: 'Recursively search for supported files.'
     required: false
