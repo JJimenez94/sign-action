@@ -33,7 +33,7 @@ This action signs files that are supported by `signtool.exe` with a code signing
 ```
 runs-on: windows-latest
 steps:
-  uses: MichaelVoelkel/code-sign-action@v1
+  uses: JJimenez94/sign-action@v1.1
   with:
     certificate: '${{ secrets.CERTIFICATE }}'
     certificate-password: '${{ secrets.CERTIFICATE_PASSWORD }}'
