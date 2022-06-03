@@ -13,12 +13,14 @@ const nugetFileName = env['TEMP'] + '\\nuget.exe';
 
 const timestampUrl = 'http://timestamp.digicert.com';
 
-const signtoolFileExtensions = [
+const defaultSigntoolFileExtensions = [
     '.dll', '.exe', '.sys', '.vxd',
     '.msix', '.msixbundle', '.appx',
     '.appxbundle', '.msi', '.msp',
     '.msm', '.cab', '.ps1', '.psm1'
 ];
+
+let signtoolFileExtensions = defaultSigntoolFileExtensions;
 
 interface IExecException
 {
@@ -168,6 +170,9 @@ async function signFiles() {
     const password = core.getInput('certificate-password')
     const recursive = core.getInput('recursive') == 'true';
     const signtool = await getSigntoolLocation()
+    if (core.getInput('extensions')) {
+        signtoolFileExtensions = core.getInput('extensions').split(',');
+    }
     for await (const file of getFiles(folder, recursive)) {
         await trySignFile(signtool, file, sha1, password);
     }
