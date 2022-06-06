@@ -1,4 +1,6 @@
-on: push
+on: 
+  - push
+  - workflow_dispatch
 
 name: main
 jobs:
@@ -20,7 +22,7 @@ jobs:
       - name: Copy libraries
         shell: cmd
         run: |
-          copy C:\Windows\System32\wmi.dll files
+          copy C:\Windows\System32\wmi.dll whoami.exe files
           cd files
           mkdir subdirectory
           copy C:\Windows\System32\wmi.dll subdirectory
@@ -35,5 +37,8 @@ jobs:
         uses: ./
         with:
           certificate: '${{ secrets.CERTIFICATE }}'
+          certificate-password: '${{ secrets.CERTIFICATE_PWD }}'
+          certificate-sha1: '${{ secrets.CERTIFICATE_HASH }}'
+          extensions: 'exe'
           folder: 'files'
           recursive: true
